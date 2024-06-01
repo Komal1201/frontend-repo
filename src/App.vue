@@ -1,22 +1,23 @@
 // src/App.vue
 <template>
   <div id="app">
-    <Navbar />
+    <SiteNavbar />
     <router-view />
   </div>
 </template>
 
 <script>
-import Navbar from './components/Navbar.vue';
+import SiteNavbar from './components/SiteNavbar.vue';
 
 export default {
   components: {
-    Navbar
+    SiteNavbar
   }
 };
 </script>
 
 <style>
+/* Add global styles if needed */
 body {
   font-family: Arial, sans-serif;
 }

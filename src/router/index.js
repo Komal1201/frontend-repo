@@ -1,22 +1,18 @@
-import Vue from 'vue';
-import VueRouter from 'vue-router';
-import Reviews from '../components/Reviews.vue';
-import ReviewDetail from '../components/ReviewDetail.vue';
-
-Vue.use(VueRouter);
+import { createRouter, createWebHistory } from 'vue-router';
+import MoviesList from '../components/MoviesList.vue';
+import MovieDetail from '../components/MovieDetail.vue';
+import AboutPage from '../components/AboutPage.vue';
 
 const routes = [
-  { path: '/', redirect: '/reviews' },
-  { path: '/reviews', component: Reviews },
-  { path: '/review/:id', component: ReviewDetail },
-  { path: '/about', component: () => import('../components/About.vue') }
+  { path: '/', redirect: '/movies' },
+  { path: '/movies', component: MoviesList },
+  { path: '/movie/:id', component: MovieDetail },
+  { path: '/about', component: AboutPage }
 ];
 
-const router = new VueRouter({
-  mode: 'history',
-  base: process.env.BASE_URL,
+const router = createRouter({
+  history: createWebHistory(process.env.BASE_URL),
   routes
 });
 
 export default router;
-
